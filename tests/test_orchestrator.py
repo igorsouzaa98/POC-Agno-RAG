@@ -19,3 +19,4 @@ def test_team_has_history_enabled():
     assert team.add_history_to_context is True
     assert team.store_history_messages is True
     assert team.add_team_history_to_members is True
+    assert team.num_team_history_runs == 5

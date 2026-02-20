@@ -1,6 +1,5 @@
 from agno.agent import Agent
-from agno.models.anthropic import Claude
-from src.config import MODEL_ID
+from src.config import get_model
 from src.knowledge_builder import get_knowledge_base
 
 QUALIFIER_INSTRUCTIONS = """
@@ -41,7 +40,7 @@ def create_qualifier_agent() -> Agent:
 
     return Agent(
         name="Qualificador de Leads",
-        model=Claude(id=MODEL_ID),
+        model=get_model(),
         instructions=QUALIFIER_INSTRUCTIONS,
         knowledge=knowledge_base,
         search_knowledge=True,

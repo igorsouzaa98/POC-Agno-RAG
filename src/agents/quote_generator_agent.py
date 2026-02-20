@@ -1,6 +1,5 @@
 from agno.agent import Agent
-from agno.models.anthropic import Claude
-from src.config import MODEL_ID
+from src.config import get_model
 
 QUOTE_GENERATOR_INSTRUCTIONS = """
 Você é o Agente Gerador de Orçamentos de uma distribuidora de produtos de aço.
@@ -46,7 +45,7 @@ PRÓXIMOS PASSOS:
 def create_quote_generator_agent() -> Agent:
     return Agent(
         name="Gerador de Orçamentos",
-        model=Claude(id=MODEL_ID),
+        model=get_model(),
         instructions=QUOTE_GENERATOR_INSTRUCTIONS,
         markdown=True,
     )

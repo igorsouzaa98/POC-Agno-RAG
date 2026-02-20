@@ -1,6 +1,5 @@
 from agno.agent import Agent
-from agno.models.anthropic import Claude
-from src.config import MODEL_ID
+from src.config import get_model
 from src.knowledge_builder import get_knowledge_base
 
 PRODUCT_SPECIALIST_INSTRUCTIONS = """
@@ -42,7 +41,7 @@ def create_product_specialist_agent() -> Agent:
 
     return Agent(
         name="Especialista de Produtos",
-        model=Claude(id=MODEL_ID),
+        model=get_model(),
         instructions=PRODUCT_SPECIALIST_INSTRUCTIONS,
         knowledge=knowledge_base,
         search_knowledge=True,

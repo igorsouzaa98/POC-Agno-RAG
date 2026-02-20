@@ -1,6 +1,5 @@
 from agno.team import Team
-from agno.models.anthropic import Claude
-from src.config import MODEL_ID
+from src.config import get_model
 from src.agents.qualifier_agent import create_qualifier_agent
 from src.agents.product_specialist_agent import create_product_specialist_agent
 from src.agents.quote_generator_agent import create_quote_generator_agent
@@ -32,7 +31,7 @@ def create_steel_sales_team() -> Team:
     team = Team(
         name="Time de Vendas de Aço",
         mode="coordinate",
-        model=Claude(id=MODEL_ID),
+        model=get_model(),
         members=[qualifier, product_specialist, quote_generator],
         instructions=ORCHESTRATOR_INSTRUCTIONS,
         markdown=True,

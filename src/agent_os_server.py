@@ -4,7 +4,7 @@ Servidor AgentOS — integração com o Agent UI (frontend Agno).
 Como usar:
   1. Inicie este servidor: python src/agent_os_server.py
   2. Em outro terminal, rode o frontend: npx create-agent-ui@latest
-  3. Acesse http://localhost:3000 e conecte em http://localhost:7777
+  3. Acesse http://localhost:3001 e conecte em http://localhost:7777
 """
 import sys
 sys.path.insert(0, '.')
@@ -28,6 +28,7 @@ agent_os = AgentOS(
     description="Sistema de qualificação de leads e geração de orçamentos para distribuidora de aço",
     agents=[qualifier, product_specialist, quote_generator],
     teams=[steel_team],
+    cors_allowed_origins=["http://localhost:3000", "http://localhost:3001"],
 )
 
 app = agent_os.get_app()

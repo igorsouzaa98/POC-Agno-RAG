@@ -2,6 +2,9 @@ from fastapi import FastAPI, HTTPException
 from src.models import IncomingMessage, AgentResponse, LeadClassification, LeadData
 from src.orchestrator import create_steel_sales_team
 from src.business_rules import check_auto_disqualification, calculate_score
+from src.followup_scheduler import FollowUpManager
+
+_followup_manager = FollowUpManager(dry_run=True)  # dry_run=False em produção com APScheduler
 
 app = FastAPI(
     title="POC Agno - Agentes de Vendas de Aço",
@@ -87,6 +90,20 @@ async def chat(message: IncomingMessage):
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/followup/register")
+async def register_followup(session_id: str, lead_name: str, contact: str):
+    """Registra lead para follow-ups automáticos pós-orçamento."""
+    _followup_manager.register(session_id=session_id, lead_name=lead_name, contact=contact)
+    return {"status": "registered", "session_id": session_id}
+
+
+@app.post("/followup/cancel")
+async def cancel_followup(session_id: str):
+    """Cancela follow-ups de um lead (quando ele responde)."""
+    _followup_manager.cancel(session_id=session_id)
+    return {"status": "cancelled", "session_id": session_id}
 
 
 @app.get("/")

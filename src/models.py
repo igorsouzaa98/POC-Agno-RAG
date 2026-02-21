@@ -38,6 +38,8 @@ class LeadData(BaseModel):
     urgency: Optional[str] = None
     classification: LeadClassification = LeadClassification.FRIO
     missing_fields: list[str] = []
+    score: int = 0
+    disqualified_reason: Optional[str] = None
 
 
 class IncomingMessage(BaseModel):

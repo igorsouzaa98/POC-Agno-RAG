@@ -54,6 +54,27 @@ class TestModelos:
         assert resp.next_action == "collect_data"
 
 
+    def test_lead_data_has_score_field(self):
+        from src.models import LeadData
+        lead = LeadData(session_id="test")
+        assert lead.score == 0  # padrão é 0
+
+    def test_lead_score_range_is_valid(self):
+        from src.models import LeadData
+        lead = LeadData(session_id="test", score=85)
+        assert 0 <= lead.score <= 100
+
+    def test_lead_data_has_disqualified_reason_field(self):
+        from src.models import LeadData
+        lead = LeadData(session_id="test")
+        assert lead.disqualified_reason is None
+
+    def test_lead_data_disqualified_reason_can_be_set(self):
+        from src.models import LeadData
+        lead = LeadData(session_id="test", disqualified_reason="Estado SP não atendido")
+        assert lead.disqualified_reason == "Estado SP não atendido"
+
+
 class TestAgentesEstrutura:
     """Testes estruturais dos agentes (sem chamada à API)"""
 
@@ -131,3 +152,4 @@ class TestFluxoQualificacao:
         response = team.run(mensagem)
         content = response.content if hasattr(response, 'content') else str(response)
         assert any(w in content.lower() for w in ["morno", "orçamento", "resumo", "pedido", "carlos"])
+

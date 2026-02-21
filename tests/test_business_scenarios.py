@@ -97,7 +97,7 @@ class TestAgentesEstrutura:
         from src.orchestrator import create_steel_sales_team
         team = create_steel_sales_team()
         assert team is not None
-        assert len(team.members) == 3
+        assert len(team.members) == 4
 
     def test_api_health_endpoint(self):
         from fastapi.testclient import TestClient

@@ -1,11 +1,12 @@
 from fastapi import FastAPI, HTTPException
 from src.models import IncomingMessage, AgentResponse, LeadClassification, LeadData
 from src.orchestrator import create_steel_sales_team
+from src.business_rules import check_auto_disqualification, calculate_score
 
 app = FastAPI(
     title="POC Agno - Agentes de Vendas de Aço",
     description="API de automação do fluxo de atendimento para distribuidora de aço",
-    version="0.1.0",
+    version="0.2.0",
 )
 
 _team = None
@@ -35,17 +36,42 @@ async def health_check():
 @app.post("/chat", response_model=AgentResponse)
 async def chat(message: IncomingMessage):
     try:
-        team = get_team()
+        lead_data = message.lead_data or LeadData(session_id=message.session_id)
 
+        # Calcular score antes de chamar o agente
+        lead_data.score = calculate_score(
+            volume_estimate=lead_data.volume_estimate,
+            urgency=lead_data.urgency,
+        )
+
+        # Verificar desqualificação automática (sem chamar IA)
+        disq = check_auto_disqualification(
+            state=lead_data.state,
+            volume_estimate=lead_data.volume_estimate,
+            product=lead_data.technical_product or lead_data.product_interest,
+        )
+
+        if disq["disqualified"]:
+            lead_data.disqualified_reason = disq["reason"]
+            lead_data.classification = LeadClassification.FRIO
+            return AgentResponse(
+                session_id=message.session_id,
+                message=disq["reason"],
+                classification=LeadClassification.FRIO,
+                lead_data=lead_data,
+                next_action="disqualified",
+            )
+
+        # Chamar agentes apenas se não desqualificado
+        team = get_team()
         context = message.message
         if message.lead_data:
-            context = f"[DADOS DO LEAD: {message.lead_data.model_dump_json()}]\n\nMensagem do cliente: {message.message}"
+            context = f"[DADOS DO LEAD: {lead_data.model_dump_json()}]\n\nMensagem do cliente: {message.message}"
 
         response = team.run(context)
-        content = response.content if hasattr(response, 'content') else str(response)
+        content = response.content if hasattr(response, "content") else str(response)
         classification = extract_classification(content)
 
-        lead_data = message.lead_data or LeadData(session_id=message.session_id)
         lead_data.classification = classification
 
         return AgentResponse(
@@ -53,9 +79,11 @@ async def chat(message: IncomingMessage):
             message=content,
             classification=classification,
             lead_data=lead_data,
-            next_action="collect_data" if classification == LeadClassification.FRIO else
-                       "generate_quote" if classification == LeadClassification.MORNO else
-                       "transfer_to_closer"
+            next_action=(
+                "collect_data" if classification == LeadClassification.FRIO else
+                "generate_quote" if classification == LeadClassification.MORNO else
+                "transfer_to_closer"
+            ),
         )
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
@@ -68,5 +96,5 @@ async def root():
         "endpoints": {
             "POST /chat": "Enviar mensagem para os agentes",
             "GET /health": "Status da API",
-        }
+        },
     }

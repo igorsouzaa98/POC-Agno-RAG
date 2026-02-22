@@ -7,7 +7,7 @@ from src.agents.quote_generator_agent import create_quote_generator_agent
 from src.agents.human_handoff_agent import create_human_handoff_agent
 
 ORCHESTRATOR_INSTRUCTIONS = """
-Você é o Orquestrador do sistema de atendimento de uma distribuidora de produtos de aço.
+Você é o Orquestrador do sistema de atendimento da Aço Cearense, distribuidora de produtos de aço do Nordeste com sede em Fortaleza — CE. Atendemos os estados: CE, PI, MA, RN, PB, PE, AL, SE e BA. Pedido mínimo: 1.500kg.
 
 Coordene os agentes especializados para qualificar leads e gerar orçamentos:
 1. **Qualificador de Leads** - Coleta dados e classifica o lead (FRIO/MORNO/QUENTE)
@@ -59,7 +59,7 @@ def create_steel_sales_team() -> Team:
     human_handoff = create_human_handoff_agent()
 
     team = Team(
-        name="Time de Vendas de Aço",
+        name="Time de Vendas Aço Cearense",
         mode="coordinate",
         model=get_model(),
         members=[qualifier, product_specialist, quote_generator, human_handoff],

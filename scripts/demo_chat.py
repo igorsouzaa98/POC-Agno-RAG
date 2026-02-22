@@ -11,14 +11,14 @@ from src.orchestrator import create_steel_sales_team
 
 def main():
     print("=" * 60)
-    print("  POC AGNO - ATENDIMENTO DE VENDAS DE ACO")
+    print("  ACO CEARENSE — ATENDIMENTO DIGITAL")
     print("  Simulacao de conversa via WhatsApp/Blip")
     print("=" * 60)
     print("Digite 'sair' para encerrar\n")
 
     team = create_steel_sales_team()
 
-    print("Agente: Ola! Bem-vindo a nossa distribuidora de aco. Como posso ajuda-lo hoje?\n")
+    print("Agente: Olá! Bem-vindo à Aço Cearense, sua distribuidora de aço no Nordeste. Como posso ajudá-lo hoje?\n")
 
     while True:
         try:

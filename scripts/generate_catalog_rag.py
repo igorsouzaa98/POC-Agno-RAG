@@ -5,14 +5,20 @@ Fonte: produtos_informações_sem_inox.xlsx
 Saída: knowledge/catalog_groups/<grupo>.txt (22 arquivos)
 
 Executar:
-    python scripts/generate_catalog_rag.py
     python scripts/generate_catalog_rag.py --source /caminho/para/planilha.xlsx
 """
 import sys
 import argparse
 from pathlib import Path
 
-sys.path.insert(0, ".")
+# Índices das colunas na planilha produtos_informações_sem_inox.xlsx
+_COL_SAP = 1
+_COL_DESC = 3
+_COL_PESO = 6
+_COL_LARGURA = 7
+_COL_COMPRIMENTO = 8
+_COL_GRUPO = 9
+_COL_SUBGRUPO = 10
 
 # Metadados de aplicação por grupo (enriquecimento manual — não está na planilha)
 APLICACOES_POR_GRUPO = {
@@ -161,31 +167,31 @@ def gerar_catalogo(source_path: str, output_dir: str = "knowledge/catalog_groups
     # Coletar produtos por grupo
     grupos: dict = {}
     for row in ws.iter_rows(min_row=2, values_only=True):
-        grupo = row[9]
+        grupo = row[_COL_GRUPO]
         if not grupo:
             continue
 
         if grupo not in grupos:
             grupos[grupo] = {"subgrupos": {}, "exemplos": []}
 
-        subgrupo = row[10] or ""
+        subgrupo = row[_COL_SUBGRUPO] or ""
         if subgrupo and subgrupo not in grupos[grupo]["subgrupos"]:
             grupos[grupo]["subgrupos"][subgrupo] = []
 
         # Guardar até 8 exemplos por grupo
         if len(grupos[grupo]["exemplos"]) < 8:
             grupos[grupo]["exemplos"].append({
-                "cod": row[1],
-                "desc": row[3],
-                "peso": row[6],
-                "largura": row[7],
-                "comprimento": row[8],
+                "cod": row[_COL_SAP],
+                "desc": row[_COL_DESC],
+                "peso": row[_COL_PESO],
+                "largura": row[_COL_LARGURA],
+                "comprimento": row[_COL_COMPRIMENTO],
                 "subgrupo": subgrupo,
             })
 
         # Guardar até 3 exemplos por subgrupo
         if subgrupo and len(grupos[grupo]["subgrupos"][subgrupo]) < 3:
-            grupos[grupo]["subgrupos"][subgrupo].append(row[3])
+            grupos[grupo]["subgrupos"][subgrupo].append(row[_COL_DESC])
 
     print(f"Grupos encontrados: {len(grupos)}")
 
@@ -240,8 +246,8 @@ def main():
     parser = argparse.ArgumentParser(description="Gera arquivos .txt do catálogo por grupo para RAG")
     parser.add_argument(
         "--source",
-        default="/Users/igorsouza/Downloads/OneDrive_1_13-02-2026/produtos_informações_sem_inox.xlsx",
-        help="Caminho para a planilha de produtos",
+        required=True,
+        help="Caminho para a planilha de produtos (ex: /path/to/produtos_informações_sem_inox.xlsx)",
     )
     parser.add_argument(
         "--output",

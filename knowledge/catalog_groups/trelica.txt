@@ -1,0 +1,23 @@
+GRUPO: Trelica
+
+DESCRIÇÃO:
+Treliças de aço para lajes treliçadas.
+
+APLICAÇÕES:
+Lajes treliçadas (sistema EPS + treliça), lajes de concreto para construção civil residencial e comercial.
+
+SUB-GRUPOS DISPONÍVEIS:
+- Treliça Pesada: TRELICA TR 8L 3m (B), TRELICA TR 8L 3m (C)
+- Treliça Leve: TRELICA TR 8LL 9m, TRELICA TR 8LL 5m
+- Treliça Super Leve: TRELICA TR 8SL 6m (B), TRELICA TR 8SL 6m
+- Treliça Reforçada: TRELICA TR 12R 12m
+
+PRODUTOS REPRESENTATIVOS:
+- Cód 210278: TRELICA TR 8L 3m (B) [3000mm] — 0.73kg/un
+- Cód 210279: TRELICA TR 8L 3m (C) [3000mm] — 0.73kg/un
+- Cód 210386: TRELICA TR 8LL 9m [9000mm] — 0.67kg/un
+- Cód 210393: TRELICA TR 8LL 5m [5000mm] — 0.67kg/un
+- Cód 210499: TRELICA TR 8SL 6m (B) [6000mm] — 0.63kg/un
+- Cód 210501: TRELICA TR 8L 6m (B) [6000mm] — 0.73kg/un
+- Cód 210509: TRELICA TR 8LL 6m (B) [6000mm] — 0.67kg/un
+- Cód 208008: TRELICA TR 8SL 6m [6000mm] — 0.63kg/un

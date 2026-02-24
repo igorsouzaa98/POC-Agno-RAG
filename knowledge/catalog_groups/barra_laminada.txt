@@ -1,0 +1,23 @@
+GRUPO: Barra Laminada
+
+DESCRIÇÃO:
+Barras de aço laminadas a quente em diferentes perfis.
+
+APLICAÇÕES:
+Serralheria, grades, portões, escadas, estruturas leves, reforço de alvenaria, fabricação de ferramentas.
+
+SUB-GRUPOS DISPONÍVEIS:
+- Redonda: BARRA REDONDA MECANICA 12,00mm 6m, BARRA REDONDA MECANICA 6,30mm 6m N
+- Cantoneira: CANTONEIRA 5/8 X 2,5 MM 6M I, CANTONEIRA 3/4 LEVE 6M I
+- Chata: BARRA CHATA 2 X 5/8 6M I, BARRA CHATA 1/2 LEVE 6M I
+- Quadrada: BARRA QUADRADA 3/8 6M I, BARRA QUADRADA 1/2 6M I
+
+PRODUTOS REPRESENTATIVOS:
+- Cód 200001: BARRA REDONDA MECANICA 12,00mm 6m [6000mm] — 5.30kg/un
+- Cód 650003: CANTONEIRA 5/8 X 2,5 MM 6M I [6000mm] — 3.40kg/un
+- Cód 650004: CANTONEIRA 3/4 LEVE 6M I [6000mm] — 5.20kg/un
+- Cód 650005: CANTONEIRA 1 X 1/4 6M I [6000mm] — 13.30kg/un
+- Cód 650006: CANTONEIRA 1 1/4 X 3/16 6M I [6000mm] — 13.20kg/un
+- Cód 650007: CANTONEIRA 1 1/4 X 1/4 6M I [6000mm] — 17.10kg/un
+- Cód 650008: CANTONEIRA 1 1/2 X 3/16 6M I [6000mm] — 16kg/un
+- Cód 650009: CANTONEIRA 1 1/2 X 1/4 6M I [6000mm] — 20.90kg/un

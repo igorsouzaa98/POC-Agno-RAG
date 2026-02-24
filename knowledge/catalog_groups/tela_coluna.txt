@@ -1,0 +1,20 @@
+GRUPO: Tela Coluna
+
+DESCRIÇÃO:
+Telas especiais para reforço de colunas e pilares.
+
+APLICAÇÕES:
+Reforço de pilares de concreto armado, colunas estruturais.
+
+SUB-GRUPOS DISPONÍVEIS:
+- Tela Coluna: TELA COLUNA 8,00mm 7X14cm 6m - 50 pc, TELA COLUNA 8,00mm 7X17cm 6m - 50 pc
+
+PRODUTOS REPRESENTATIVOS:
+- Cód 200134: TELA COLUNA 8,00mm 7X14cm 6m - 50 pc [6000mm] — 10.40kg/un
+- Cód 200135: TELA COLUNA 8,00mm 7X17cm 6m - 50 pc [6000mm] — 11.20kg/un
+- Cód 200136: TELA COLUNA 10,00mm 7X14cm 6m - 50 pc [6000mm] — 16.10kg/un
+- Cód 200137: TELA COLUNA 10,00mm 7X17cm 6m - 50 pc [6000mm] — 16.10kg/un
+- Cód 200139: TELA COLUNA 10,00mm 7X17cm 7m [7000mm] — 18.80kg/un
+- Cód 219847: TELA COLUNA 8,00mm 7X20CM 6M - 50 pc [6000mm] — 11.21kg/un
+- Cód 219848: TELA COLUNA 8,00mm 7X27CM 6M - 50 pc [6000mm] — 11.20kg/un
+- Cód 219849: TELA COLUNA 10,00mm 7X20CM 6M - 50 pc [6000mm] — 16.10kg/un

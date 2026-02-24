@@ -1,0 +1,21 @@
+GRUPO: Caixilho
+
+DESCRIÇÃO:
+Perfis para esquadrias e caixilharia metálica.
+
+APLICAÇÕES:
+Janelas, portas, portões, grades, esquadrias metálicas.
+
+SUB-GRUPOS DISPONÍVEIS:
+- Barra p/Porta: BARRA P/ PORTA 1,50mm LF 6000mm, BARRA P/ PORTA 1,55mm GA 6000mm
+- Caixilho: PERFIL U PESADO 1,50mm LF 6000mm, PERFIL U PESADO 1,55mm GA 6000mm
+
+PRODUTOS REPRESENTATIVOS:
+- Cód 200360: BARRA P/ PORTA 1,50mm LF 6000mm [6000mm] — 7.60kg/un
+- Cód 200361: BARRA P/ PORTA 1,55mm GA 6000mm [6000mm] — 7.90kg/un
+- Cód 200362: BARRA P/ PORTA 1,25mm GA 6000mm [6000mm] — 6.30kg/un
+- Cód 200363: BARRA P/ PORTA 1,50mm LF 6000mm (B) [6000mm] — 7.60kg/un
+- Cód 200364: BARRA P/ PORTA 1,55mm GA 6000mm (B) [6000mm] — 7.90kg/un
+- Cód 200365: BARRA P/ PORTA 1,25mm GA 6000mm (B) [6000mm] — 6.30kg/un
+- Cód 200366: BARRA P/ PORTA 1,50mm LF 6000mm (C) [6000mm] — 7.60kg/un
+- Cód 200367: BARRA P/ PORTA 1,55mm GA 6000mm (C) [6000mm] — 7.90kg/un

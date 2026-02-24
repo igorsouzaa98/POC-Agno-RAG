@@ -1,0 +1,20 @@
+GRUPO: Chapa Plana
+
+DESCRIÇÃO:
+Chapas planas de aço para corte e dobramento.
+
+APLICAÇÕES:
+Estamparia, fabricação de peças, fechamento de estruturas, painéis, caixas metálicas, peças sob medida.
+
+SUB-GRUPOS DISPONÍVEIS:
+- Chapa Plana: CH PLANA 0,45mm LF 600mm X 550mm(B), CH PLANA 0,45mm LF 600mm X 550mm(C)
+
+PRODUTOS REPRESENTATIVOS:
+- Cód 215773: CH PLANA 0,45mm LF 600mm X 550mm(B) [550mm | 600mm] — 1.20kg/un
+- Cód 215774: CH PLANA 0,45mm LF 600mm X 550mm(C) [550mm | 600mm] — 1.20kg/un
+- Cód 215775: CH PLANA 0,75mm GA 2000mm X 1200mm(B) [1200mm | 2000mm] — 14.10kg/un
+- Cód 215776: CH PLANA 0,75mm GA 2000mm X 1200mm(C) [1200mm | 2000mm] — 14.10kg/un
+- Cód 215777: CH PLANA 0,95mm GA 3000mm X 1200mm(B) [1200mm | 3000mm] — 26.90kg/un
+- Cód 215778: CH PLANA 0,95mm GA 3000mm X 1200mm(C) [1200mm | 3000mm] — 26.90kg/un
+- Cód 215826: CH PLANA 3,00mm LQ 3000mm X 1000mm(B) [1000mm | 3000mm] — 70.70kg/un
+- Cód 215827: CH PLANA 3,00mm LQ 3000mm X 1000mm(C) [1000mm | 3000mm] — 70.70kg/un

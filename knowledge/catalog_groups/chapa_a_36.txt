@@ -1,0 +1,20 @@
+GRUPO: Chapa A-36
+
+DESCRIÇÃO:
+Chapas grossas de aço A-36 para uso estrutural e industrial.
+
+APLICAÇÕES:
+Tanques, reservatórios, estruturas navais, implementos agrícolas, equipamentos industriais, caldeiras.
+
+SUB-GRUPOS DISPONÍVEIS:
+- Chapa A-36: CHAPA PRETA 5/16 A-36 12000mmX2000mm, CHAPA PRETA 5/16" NRU Roll C
+
+PRODUTOS REPRESENTATIVOS:
+- Cód 101650: CHAPA PRETA 5/16 A-36 12000mmX2000mm [2000mm | 12000mm] — 1495.90kg/un
+- Cód 217587: CHAPA PRETA 5/16" NRU Roll C
+- Cód 650273: CHAPA PRETA 5/16 A-36 12000mmX2440mm [2440mm | 12000mm] — 1824.40kg/un
+- Cód 650277: CHAPA PRETA 3/4 A-36 12000mmX2440mm [2440mm | 12000mm] — 4378.60kg/un
+- Cód 650278: CHAPA PRETA 1" A-36 12000mmX2300mm [2300mm | 12000mm] — 5503.20kg/un
+- Cód 650279: CHAPA PRETA 1.1/4 A-36 12000mmX2300mm [2300mm | 12000mm] — 8254.80kg/un
+- Cód 650280: CHAPA PRETA 1.1/2 A-36 12000mmX2300mm [2300mm | 12000mm] — 8254.80kg/un
+- Cód 650281: CHAPA PRETA 2" A-36 12000mmX2300mm [2300mm | 12000mm] — 11006.30kg/un

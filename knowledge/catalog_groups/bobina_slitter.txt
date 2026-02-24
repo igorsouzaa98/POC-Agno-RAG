@@ -1,0 +1,20 @@
+GRUPO: Bobina Slitter
+
+DESCRIÇÃO:
+Bobinas fendidas (slitadas) em larguras menores.
+
+APLICAÇÕES:
+Perfis, tubos, arames, peças estampadas de largura específica.
+
+SUB-GRUPOS DISPONÍVEIS:
+- Slitado: BOBINA SLITADA 2,65mm LQ 314mm E, BOBINA SLITADA 3,00mm LQ 206mm E
+
+PRODUTOS REPRESENTATIVOS:
+- Cód 220745: BOBINA SLITADA 2,65mm LQ 314mm E [314mm]
+- Cód 220746: BOBINA SLITADA 3,00mm LQ 206mm E [206mm]
+- Cód 220747: BOBINA SLITADA 3,00mm LQ 261mm E [261mm]
+- Cód 213630: BOBINA SLITADA 1,20mm LF 145mm E [145mm]
+- Cód 213632: BOBINA SLITADA 0,90mm LF 290mm E [290mm]
+- Cód 213634: BOBINA SLITADA 0,90mm LF 105mm E [105mm]
+- Cód 213636: BOBINA SLITADA 0,90mm LF 55mm E [55mm]
+- Cód 213642: BOBINA SLITADA 0,47mm GA 125mm E [125mm]

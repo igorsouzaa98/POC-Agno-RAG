@@ -1,0 +1,26 @@
+GRUPO: Tubo
+
+DESCRIÇÃO:
+Tubos de aço carbono para estruturas e conduções industriais.
+
+APLICAÇÕES:
+Estruturas metálicas, móveis (camas, armários), grades, cercas, conduções de fluidos, construção civil.
+
+SUB-GRUPOS DISPONÍVEIS:
+- Industrial: TUBO IND. 1 1/4" 0,75mm LF 6480mm, TUBO IND. 1 1/4" 0,75mm LF 6500mm
+- Metalons: METALON 40mmX20mm 2,00mm LQ 6000mm (C), METALON 80mm X 40mm 3,00mm LQ 6000mm
+- Oblongo: TUBO OBL 30mm X 16mm 1,20mm LF 1145mm, TUBO OBL 30mm X 16mm 1,20mm LF 597mm
+- Patentes: TUBO PAT. 1/2" 2,00mm LQ 6000mm (C), TUBO PAT. 1 1/4" 1,25mm GA 6000mm (B)
+- Tubo Galvanizado: TUBO GALV. 3/4" 2,00MM S/R 6000MM I, TUBO GALVANIZADO 1" 2,65MM 6000MM I
+- Elipitco: TUBO ELIPT. 49X14 1,50mm LF 6000mm, TUBO ELIPT. 49X14 1,20mm LF 6000mm
+- Lateral p/ Cama: LAT.CAMA 50mm 0,90mm LF 5500mm, LAT.CAMA 50mm 0,90mm LF 5400mm
+
+PRODUTOS REPRESENTATIVOS:
+- Cód 202467: TUBO IND. 1 1/4" 0,75mm LF 6480mm [6480mm] — 3.70kg/un
+- Cód 202468: TUBO IND. 1 1/4" 0,75mm LF 6500mm [6500mm] — 3.70kg/un
+- Cód 202469: TUBO IND. 1 1/4" 0,75mm LF 6550mm [6550mm] — 3.70kg/un
+- Cód 202492: TUBO IND. 1 1/4" 0,95mm GA 6358mm [6358mm] — 4.60kg/un
+- Cód 202496: TUBO IND. 1 1/4" 0,90mm LF 6000mm (B) [6000mm] — 4.10kg/un
+- Cód 202497: TUBO IND. 1 1/4" 1,20mm LF 6000mm (B) [6000mm] — 5.40kg/un
+- Cód 202498: TUBO IND. 1 1/4" 1,50mm LF 6000mm (B) [6000mm] — 6.70kg/un
+- Cód 202499: TUBO IND. 1 1/4" 2,00mm LQ 6000mm (B) [6000mm] — 8.80kg/un

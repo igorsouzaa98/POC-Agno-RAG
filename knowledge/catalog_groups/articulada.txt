@@ -1,0 +1,20 @@
+GRUPO: Articulada
+
+DESCRIÇÃO:
+Telas articuladas para cercamento rural.
+
+APLICAÇÕES:
+Cercas para fazendas, pastagens, propriedades rurais, contenção de animais.
+
+SUB-GRUPOS DISPONÍVEIS:
+- Articulada: CH ARTICULADA 0,43mm ZIN 6000mm, CH ARTICULADA 0,47mm ZIN 6000mm
+
+PRODUTOS REPRESENTATIVOS:
+- Cód 210736: CH ARTICULADA 0,43mm ZIN 6000mm [105mm | 6000mm] — 3kg/un
+- Cód 210737: CH ARTICULADA 0,47mm ZIN 6000mm [105mm | 6000mm] — 3.30kg/un
+- Cód 200509: CH ARTICULADA 0,60mm LF 6000mm [105mm | 6000mm] — 4.20kg/un
+- Cód 200510: CH ARTICULADA 0,45mm LF 6000mm [105mm | 6000mm] — 3.10kg/un
+- Cód 200513: CH ARTICULADA 0,43mm GA 6000mm [105mm | 6000mm] — 3kg/un
+- Cód 200514: CH ARTICULADA 0,65mm GA 6000mm [105mm | 6000mm] — 4.60kg/un
+- Cód 200515: CH ARTICULADA 0,40mm GA 6000mm [105mm | 6000mm] — 2.80kg/un
+- Cód 200516: CH ARTICULADA 0,60mm LF 5000mm [105mm | 5000mm] — 3.50kg/un

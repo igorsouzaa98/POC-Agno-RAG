@@ -1,0 +1,22 @@
+GRUPO: Perfis
+
+DESCRIÇÃO:
+Perfis de aço conformados a frio para estruturas e acabamentos.
+
+APLICAÇÕES:
+Drywall, galpões, mezaninos, estruturas leves, forros, divisórias, sistemas construtivos industrializados.
+
+SUB-GRUPOS DISPONÍVEIS:
+- Perfil Enrijecido: PERFIL ENR 8" 60mm 2,25mm LQ 6000mm, PERFIL ENR 6" 60mm 2,00mm LQ 5000mm
+- Perfil U: PERFIL U 4" 40mm 2,65mm LQ 4990mm (C), PERFIL U 4" 40mm 1,80mm LQ 6000mm
+- Perfil Encaixe: PERFIL ENC 93 X 30 2,65mm LQ 6000mm, PERFIL ENC 93 X 30 2,25mm LQ 6000mm
+
+PRODUTOS REPRESENTATIVOS:
+- Cód 215955: PERFIL ENR 8" 60mm 2,25mm LQ 6000mm [6000mm] — 36.40kg/un
+- Cód 216104: PERFIL ENR 6" 60mm 2,00mm LQ 5000mm [5000mm] — 22.70kg/un
+- Cód 209979: PERFIL U 4" 40mm 2,65mm LQ 4990mm (C) [4990mm] — 17.80kg/un
+- Cód 209980: PERFIL ENR 4" 50mm 2,00mm LQ 5000mm(C) [5000mm] — 15kg/un
+- Cód 210001: PERFIL ENR 2" 25mm 2,65mm LQ 6000mm(C) [6000mm] — 13.10kg/un
+- Cód 210057: PERFIL U 4" 40mm 1,80mm LQ 6000mm [6000mm] — 14.50kg/un
+- Cód 210203: PERFIL ENR 4" 40mm 2,25mm LQ 6000mm(C) [6000mm] — 20.50kg/un
+- Cód 210256: PERFIL ENR 2" 25mm 3,00mm LQ 6000mm(C) [6000mm] — 14.80kg/un

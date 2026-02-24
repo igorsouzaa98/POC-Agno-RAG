@@ -1,0 +1,20 @@
+GRUPO: Bobininha
+
+DESCRIÇÃO:
+Bobinas de aço em formato reduzido para uso industrial e artesanal.
+
+APLICAÇÕES:
+Pequenas peças, artesanato em metal, mola, molas industriais.
+
+SUB-GRUPOS DISPONÍVEIS:
+- Bobininha: BOBININHA 0,43mm ZIN 1200mm (C), BOBININHA 0,40mm ZIN 300mm
+
+PRODUTOS REPRESENTATIVOS:
+- Cód 210402: BOBININHA 0,43mm ZIN 1200mm (C) [1200mm]
+- Cód 216878: BOBININHA 0,40mm ZIN 300mm [300mm] — 100kg/un
+- Cód 216879: BOBININHA 0,40mm ZIN 400mm [400mm] — 100kg/un
+- Cód 216880: BOBININHA 0,40mm ZIN 600mm [600mm] — 100kg/un
+- Cód 200451: BOBININHA 0,43mm GA 200mm (C) [200mm]
+- Cód 200452: BOBININHA 0,43mm GA 350mm (C) [350mm]
+- Cód 200453: BOBININHA 0,40mm GA 400mm (C) [400mm]
+- Cód 200454: BOBININHA 0,40mm GA 500mm (C) [500mm]

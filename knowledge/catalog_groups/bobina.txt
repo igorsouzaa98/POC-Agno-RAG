@@ -1,0 +1,21 @@
+GRUPO: Bobina
+
+DESCRIÇÃO:
+Bobinas de aço laminado a frio e quente.
+
+APLICAÇÕES:
+Indústria metalmecânica, estamparia, fabricação de peças, alimentação de linhas de produção automatizadas.
+
+SUB-GRUPOS DISPONÍVEIS:
+- Bobina Reduzida: BOBINA DE ACO REDUZIDA 0,43mm ZIN 1200mm, BOBINA DE ACO REDUZIDA 0,47mm GA 1000mm
+- Bobina: BOBINA DE ACO 0,75mm GA 1200mm MIN, BOBINA DE ACO 10,00mm LQ 1200mm Roll C/E
+
+PRODUTOS REPRESENTATIVOS:
+- Cód 211572: BOBINA DE ACO REDUZIDA 0,43mm ZIN 1200mm [1200mm]
+- Cód 211890: BOBINA DE ACO REDUZIDA 0,47mm GA 1000mm [1000mm]
+- Cód 211891: BOBINA DE ACO REDUZIDA 0,47mm GA 1200mm [1200mm]
+- Cód 101111: BOBINA DE ACO 0,75mm GA 1200mm MIN [1200mm]
+- Cód 101132: BOBINA DE ACO 10,00mm LQ 1200mm Roll C/E [1200mm]
+- Cód 101284: BOBINA DE ACO 0,65mm GA 1500mm CN [1500mm]
+- Cód 101285: BOBINA DE ACO 0,65mm GA 1500mm MIN [1500mm]
+- Cód 101288: BOBINA DE ACO 0,75mm GA 1500mm MIN [1500mm]

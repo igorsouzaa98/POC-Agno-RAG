@@ -20,19 +20,37 @@ def test_root_endpoint(client):
     assert "message" in response.json()
 
 
-def test_out_of_state_lead_gets_disqualified():
+def test_invalid_state_lead_gets_disqualified():
+    """Estado inexistente (XX) deve ser desqualificado — empresa atende todos os 27 estados."""
     from fastapi.testclient import TestClient
     from src.api import app
     from src.models import IncomingMessage, LeadData
 
     client = TestClient(app)
-    lead = LeadData(session_id="test-sp", state="SP", volume_estimate="5 toneladas")
-    msg = IncomingMessage(session_id="test-sp", message="Quero vergalhão", lead_data=lead)
+    lead = LeadData(session_id="test-xx", state="XX", volume_estimate="5 toneladas")
+    msg = IncomingMessage(session_id="test-xx", message="Quero vergalhão", lead_data=lead)
     response = client.post("/chat", json=msg.model_dump())
     assert response.status_code == 200
     data = response.json()
     assert data["lead_data"]["disqualified_reason"] is not None
     assert data["next_action"] == "disqualified"
+
+
+def test_sp_lead_is_not_disqualified_by_state():
+    """SP agora é atendido — cobertura nacional. Não deve desqualificar por estado."""
+    from fastapi.testclient import TestClient
+    from src.api import app
+    from src.models import IncomingMessage, LeadData
+
+    client = TestClient(app)
+    # SP tem mínimo de 4000kg; 5 toneladas (5000kg) deve passar
+    lead = LeadData(session_id="test-sp-ok", state="SP", volume_estimate="5 toneladas")
+    msg = IncomingMessage(session_id="test-sp-ok", message="Quero vergalhão", lead_data=lead)
+    response = client.post("/chat", json=msg.model_dump())
+    assert response.status_code == 200
+    data = response.json()
+    # Não deve ser desqualificado por estado nem por volume
+    assert data["next_action"] != "disqualified"
 
 
 def test_score_calculated_from_volume():

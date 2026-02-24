@@ -5,11 +5,15 @@ Todas as funções são puras (sem side effects) para facilitar testes.
 import re
 from typing import Optional
 
-# Estados atendidos
-STATES_SERVED = {"CE", "PI", "MA", "RN", "PB", "PE", "AL", "SE", "BA"}
+from src.data.weight_rules import PESO_MINIMO_CIF_POR_ESTADO, get_peso_minimo
 
-# Volume mínimo em kg
-MINIMUM_VOLUME_KG = 1500
+# Estados atendidos — todos os 27 estados cobertos pela planilha de peso mínimo CIF
+STATES_SERVED = set(PESO_MINIMO_CIF_POR_ESTADO.keys())
+
+# Volume mínimo por estado: use get_peso_minimo(state) ou PESO_MINIMO_CIF_POR_ESTADO[state].
+# Não existe mais um valor fixo global — o mínimo varia de 250kg (CE) a 10.000kg (estados remotos).
+# Para compatibilidade com código legado que não passa estado, usa-se 1500kg como fallback.
+MINIMUM_VOLUME_KG_FALLBACK = 1500
 
 # Produtos disponíveis (normalizado em lowercase)
 AVAILABLE_PRODUCTS = {
@@ -53,12 +57,17 @@ def calculate_score(volume_estimate: Optional[str], urgency: Optional[str]) -> i
 
 
 def check_minimum_volume(volume_estimate: Optional[str], state: Optional[str] = None) -> bool:
-    """Retorna True se volume >= 1500kg."""
-    return _parse_volume_to_kg(volume_estimate) >= MINIMUM_VOLUME_KG
+    """Retorna True se volume >= mínimo do estado. Usa 1500kg como fallback se estado não informado."""
+    volume_kg = _parse_volume_to_kg(volume_estimate)
+    if state:
+        minimo = get_peso_minimo(state)
+        if minimo is not None:
+            return volume_kg >= minimo
+    return volume_kg >= MINIMUM_VOLUME_KG_FALLBACK
 
 
 def is_state_served(state: Optional[str]) -> bool:
-    """Retorna True se estado está no Nordeste atendido."""
+    """Retorna True se estado está na cobertura nacional da Aço Cearense."""
     if not state:
         return False
     return state.upper().strip() in STATES_SERVED
@@ -84,12 +93,13 @@ def check_auto_disqualification(
     if state and not is_state_served(state):
         return {
             "disqualified": True,
-            "reason": f"Infelizmente não atendemos o estado {state.upper()}. Operamos no Nordeste (CE, PI, MA, RN, PB, PE, AL, SE, BA).",
+            "reason": f"Infelizmente não atendemos o estado {state.upper()}.",
         }
     if volume_estimate and not check_minimum_volume(volume_estimate, state):
+        minimo = get_peso_minimo(state) if state else MINIMUM_VOLUME_KG_FALLBACK
         return {
             "disqualified": True,
-            "reason": f"O volume informado ({volume_estimate}) está abaixo do mínimo de 1.500kg por pedido para a sua região.",
+            "reason": f"O volume informado ({volume_estimate}) está abaixo do mínimo de {minimo}kg por pedido para a sua região.",
         }
     if product and not is_product_available(product):
         return {

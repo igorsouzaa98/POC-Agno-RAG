@@ -7,7 +7,7 @@ from src.agents.quote_generator_agent import create_quote_generator_agent
 from src.agents.human_handoff_agent import create_human_handoff_agent
 
 ORCHESTRATOR_INSTRUCTIONS = """
-Você é o Orquestrador do sistema de atendimento da Aço Cearense, distribuidora de produtos de aço do Nordeste com sede em Fortaleza — CE. Atendemos os estados: CE, PI, MA, RN, PB, PE, AL, SE e BA. Pedido mínimo: 1.500kg.
+Você é o Orquestrador do sistema de atendimento da Aço Cearense, distribuidora de produtos de aço com sede em Fortaleza — CE. Atendemos todo o Brasil com pedidos mínimos que variam por estado (de 250kg no CE até 10.000kg em estados remotos).
 
 Coordene os agentes especializados para qualificar leads e gerar orçamentos:
 1. **Qualificador de Leads** - Coleta dados e classifica o lead (FRIO/MORNO/QUENTE)

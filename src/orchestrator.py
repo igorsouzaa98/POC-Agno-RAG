@@ -1,4 +1,5 @@
 from agno.team import Team
+from agno.team.team import TeamMode
 from agno.db.sqlite import SqliteDb
 from src.config import get_model
 from src.agents.qualifier_agent import create_qualifier_agent
@@ -60,7 +61,7 @@ def create_steel_sales_team() -> Team:
 
     team = Team(
         name="Time de Vendas Aço Cearense",
-        mode="coordinate",
+        mode=TeamMode.coordinate,
         model=get_model(),
         members=[qualifier, product_specialist, quote_generator, human_handoff],
         instructions=ORCHESTRATOR_INSTRUCTIONS,

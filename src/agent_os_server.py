@@ -24,11 +24,15 @@ quote_generator = create_quote_generator_agent()
 steel_team = create_steel_sales_team()
 
 agent_os = AgentOS(
-    name="POC Agno - Vendas de Aço",
+    name="Vendas de Aço",
     description="Sistema de qualificação de leads e geração de orçamentos para distribuidora de aço",
     agents=[qualifier, product_specialist, quote_generator],
     teams=[steel_team],
-    cors_allowed_origins=["http://localhost:3000", "http://localhost:3001", "*"],
+    cors_allowed_origins=[
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "https://agent-ui-smoky.vercel.app",
+    ],
 )
 
 app = agent_os.get_app()

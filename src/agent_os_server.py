@@ -32,10 +32,88 @@ agent_os = AgentOS(
         "http://localhost:3000",
         "http://localhost:3001",
         "https://agent-ui-smoky.vercel.app",
+        "https://*.vercel.app",
     ],
 )
 
 app = agent_os.get_app()
+
+from fastapi import UploadFile, File
+from pydantic import BaseModel
+from src.cnpj_service import CnpjService
+from src.models import CnpjStatus, CnpjVerifyResponse
+
+_cnpj_service = CnpjService()
+
+
+class CnpjVerifyRequest(BaseModel):
+    cnpj: str
+
+
+@app.post("/cnpj/verify", response_model=CnpjVerifyResponse)
+async def cnpj_verify(body: CnpjVerifyRequest):
+    """Verifica CNPJ (formato, inadimplência, sessão ativa) sem upload de arquivo."""
+    cnpj = body.cnpj
+
+    if not _cnpj_service.validate_cnpj(cnpj):
+        return CnpjVerifyResponse(
+            cnpj=cnpj,
+            status=CnpjStatus.INVALIDO,
+            bloqueado=True,
+            mensagem="CNPJ inválido. Por favor, verifique o número e tente novamente.",
+        )
+
+    normalized = _cnpj_service.normalize_cnpj(cnpj)
+
+    inadimplencia = _cnpj_service.check_inadimplencia(normalized)
+    if inadimplencia["inadimplente"]:
+        return CnpjVerifyResponse(
+            cnpj=normalized,
+            status=CnpjStatus.INADIMPLENTE,
+            bloqueado=True,
+            mensagem="Não foi possível iniciar o atendimento. O CNPJ informado possui restrições financeiras. Entre em contato com nossa equipe para mais informações.",
+        )
+
+    sessao = _cnpj_service.check_active_session(normalized)
+    if sessao["em_atendimento"]:
+        return CnpjVerifyResponse(
+            cnpj=normalized,
+            status=CnpjStatus.EM_ATENDIMENTO,
+            bloqueado=False,
+            mensagem="Identificamos que este CNPJ já possui um atendimento em andamento. Conectando à sua conversa anterior.",
+            session_id_ativo=sessao["session_id"],
+        )
+
+    return CnpjVerifyResponse(
+        cnpj=normalized,
+        status=CnpjStatus.OK,
+        bloqueado=False,
+        mensagem="CNPJ verificado com sucesso. Pode iniciar o atendimento.",
+    )
+
+
+@app.post("/cnpj/upload", response_model=CnpjVerifyResponse)
+async def cnpj_upload(file: UploadFile = File(...)):
+    """Recebe PDF do cartão CNPJ, extrai o número, verifica e indexa no banco vetorial."""
+    file_bytes = await file.read()
+
+    cnpj = _cnpj_service.extract_cnpj_from_pdf(file_bytes)
+    if not cnpj:
+        return CnpjVerifyResponse(
+            cnpj="",
+            status=CnpjStatus.INVALIDO,
+            bloqueado=True,
+            mensagem="Não foi possível identificar um CNPJ válido no documento enviado. Por favor, envie o Cartão CNPJ da Receita Federal.",
+        )
+
+    verify_response = await cnpj_verify(CnpjVerifyRequest(cnpj=cnpj))
+
+    try:
+        _cnpj_service.index_cnpj_document(cnpj, file_bytes)
+    except Exception:
+        pass  # Indexação não deve bloquear o fluxo
+
+    return verify_response
 
 if __name__ == "__main__":
     print("=" * 60)

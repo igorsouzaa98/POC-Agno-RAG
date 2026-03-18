@@ -54,3 +54,18 @@ class AgentResponse(BaseModel):
     classification: LeadClassification
     lead_data: LeadData
     next_action: str
+
+
+class CnpjStatus(str, Enum):
+    OK = "ok"
+    INADIMPLENTE = "inadimplente"
+    EM_ATENDIMENTO = "em_atendimento"
+    INVALIDO = "invalido"
+
+
+class CnpjVerifyResponse(BaseModel):
+    cnpj: str
+    status: CnpjStatus
+    bloqueado: bool
+    mensagem: str
+    session_id_ativo: Optional[str] = None

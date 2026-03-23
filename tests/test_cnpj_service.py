@@ -45,6 +45,12 @@ def test_check_active_session_cnpj_sem_sessao(service):
     assert result["session_id"] is None
 
 
+def test_check_active_session_cnpj_em_atendimento_stub(service):
+    result = service.check_active_session("11111111000191")
+    assert result["em_atendimento"] is True
+    assert result["session_id"] is not None
+
+
 def test_extract_cnpj_from_text(service):
     text = "CNPJ: 11.222.333/0001-81 - Empresa Teste LTDA"
     cnpj = service.extract_cnpj_from_text(text)

@@ -21,6 +21,11 @@ _INADIMPLENTES_STUB = {
     "00000000000000",  # CNPJ reservado para simular inadimplência em testes
 }
 
+# CNPJs marcados como em atendimento no stub (para testes e demo)
+_EM_ATENDIMENTO_STUB = {
+    "11111111000191",  # CNPJ reservado para simular atendimento ativo em testes
+}
+
 
 class CnpjService:
     def __init__(self, db_path: str = "data/agent_sessions.db"):
@@ -83,9 +88,12 @@ class CnpjService:
         """
         Verifica se o CNPJ já tem uma sessão ativa no banco de sessões.
 
-        Busca nas sessões das últimas 24h que contenham o CNPJ nos dados de runs.
+        Primeiro consulta o stub de CNPJs em atendimento (para testes e demo).
+        Em seguida busca nas sessões das últimas 24h que contenham o CNPJ nos dados de runs.
         """
         normalized = self.normalize_cnpj(cnpj)
+        if normalized in _EM_ATENDIMENTO_STUB:
+            return {"em_atendimento": True, "session_id": "stub"}
         try:
             conn = sqlite3.connect(self._db_path)
             cursor = conn.cursor()

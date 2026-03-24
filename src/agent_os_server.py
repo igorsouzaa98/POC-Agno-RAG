@@ -31,12 +31,28 @@ agent_os = AgentOS(
     cors_allowed_origins=[
         "http://localhost:3000",
         "http://localhost:3001",
-        "https://agent-ui-smoky.vercel.app",
-        "https://*.vercel.app",
     ],
 )
 
 app = agent_os.get_app()
+
+# Starlette não suporta wildcard de subdomínio (ex: *.vercel.app) em allow_origins.
+# Usamos allow_origin_regex para cobrir todos os deploys do Vercel.
+from starlette.middleware.cors import CORSMiddleware
+app.user_middleware = [m for m in app.user_middleware if m.cls != CORSMiddleware]
+app.middleware_stack = None
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:3001",
+    ],
+    allow_origin_regex=r"https://.*\.vercel\.app",
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+    expose_headers=["*"],
+)
 
 from fastapi import UploadFile, File
 from pydantic import BaseModel
